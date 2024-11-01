@@ -1,0 +1,25 @@
+#billing_city_field,
+#billing_address_1_field,
+#shipping_city_field,
+#shipping_address_1_field{
+    position:relative;
+}
+
+.shippingo-autocomplete {display:none;position: absolute;top: 41px;right: 0;background: #efefef;max-height: 200px;border: 1px solid #000000;width: calc(100% - 1px);padding: 0;overflow-y: auto;z-index: 1;}
+
+.shippingo-autocomplete > div {
+    padding:5px 10px;
+    border-bottom: 1px solid #f7f7f7;
+    cursor: pointer;
+    transition:200ms;
+    display:none;
+    text-align: right;
+}
+
+.shippingo-autocomplete > div.show {
+    display:block;
+}
+.shippingo-autocomplete > div:hover {
+    padding-right:15px;
+    background: #ffffff;
+}

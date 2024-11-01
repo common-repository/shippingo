@@ -1,0 +1,534 @@
+@-webkit-keyframes spin {
+	0% { -webkit-transform: rotate(0deg); }
+	100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+	0% { transform: rotate(0deg); }
+	100% { transform: rotate(360deg); }
+}
+
+#shippingo_loader,
+.shippingo_loader{
+    border: 2px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 2px solid #333;
+    width: 30px;
+    height: 30px;
+    -webkit-animation: spin 0.5s linear infinite;
+    animation: spin 0.5s linear infinite;
+    position: absolute;
+    top: calc(16% - -24px);
+    left: -190px;
+    right: 0;
+    margin: auto;
+    animation-direction: reverse;
+    margin-left: auto !important;
+    z-index: 1;
+}
+
+.tracking-box h1 {
+    text-align: right;
+}
+
+/* The actual timeline (the vertical ruler) */
+.shippingo-timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+/* The actual timeline (the vertical ruler) */
+.shippingo-timeline::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    background-color: black;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -3px;
+}
+
+/* Container around content */
+.shippingo-container {
+    padding: 10px 40px;
+    position: relative;
+    background-color: inherit;
+    width: 50%;
+}
+
+/* The circles on the timeline */
+.shippingo-container::after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    right: -12px;
+    background-color: white;
+    border: 4px solid #000000;
+    top: 15px;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+/* Place the container to the left */
+.shippingo-left {
+    right: 50%;
+}
+
+/* Place the container to the right */
+.shippingo-right {
+    right: 0;
+    text-align:left;
+}
+
+/* Add arrows to the left container (pointing right) */
+.shippingo-left::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    right: 30px;
+    border: medium solid #ffca00;
+    border-width: 10px 0 10px 10px;
+    border-color: transparent transparent transparent #ffca00;
+}
+
+/* Add arrows to the right container (pointing left) */
+.shippingo-right::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    left: 30px;
+    border: medium solid #ffca00;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent #ffca00 transparent transparent;
+}
+
+/* Fix the circle for containers on the right side */
+.shippingo-right::after {
+    left: -13px;
+    right:auto;
+}
+
+/* The actual content */
+.shippingo-content {
+    padding: 10px 20px;
+    background-color: #ffca00;
+    position: relative;
+    border-radius: 6px;
+}
+
+.woocommerce-my-account-wrapper > strong {
+    width: 100%;
+}
+.tracking_link {
+    text-decoration: underline;
+}
+
+.shipping-number {
+  display: table;
+  flex-direction: column;
+  width: 100%;
+  border-collapse: collapse;
+  border-collapse: separate;
+  border-spacing: 0 15px;
+}
+.tracking-orders-list {
+    font-size: 14px;
+    margin: 0;
+    margin-top: 40px;
+    color: #000;
+    padding: 10px 15px;
+    background-color: #000;
+    color: #fff;
+    font-weight: bold;
+    text-align: right;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+.tracking_header {
+    overflow: hidden;
+    flex: 1;
+    display: table-row;
+    align-items: center;
+    justify-content: space-evenly;
+    }
+.tracking_header > div{
+    /* border:1px solid #000; */
+    /* float: right; */
+    padding: 10px 5px;
+    color: #000;
+    font-weight: bold;
+    text-align:
+    center;
+    display: table-cell;
+}
+
+
+.tracking_cells > div.tracking_cells_last {
+    cursor: pointer;
+}
+
+.tracking_cells > div.tracking_cells_last:after {
+    display: block;
+    content: "";
+    width: 18px;
+    height: 10px;
+    background: url(../images/open.svg);
+    background-repeat: no-repeat;
+    transform: rotate(0);
+}
+.tracking_cells > div.tracking_cells_last.open:after {
+    transform: rotate(180deg);
+}
+.tracking_cells {
+    overflow: hidden;
+    /* flex: 1; */
+    display: table-row;
+    border:1px solid #D9D9D9;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    align-items: center;
+    justify-content: space-evenly;
+    position: relative;
+}
+.tracking_cells.big {
+    top: 0;
+    display: none;
+}
+
+
+.tracking_cells > div {
+    padding: 15px 5px;
+    position: relative;
+    position: relative;
+    color: #000;
+    text-align:
+    center;
+    display: table-cell;
+    border-top: 1px solid #D9D9D9;
+    border-bottom: 1px solid #D9D9D9;
+}
+.tracking_cells > div:first-child {
+    border-right: 1px solid #D9D9D9;
+    border-top-right-radius:10px;
+    border-bottom-right-radius:10px;
+}
+.tracking_cells > div:last-child {
+    border-left: 1px solid #D9D9D9;
+    border-top-left-radius:10px;
+    border-bottom-left-radius:10px;
+}
+
+/*
+.tracking_header > div:nth-child(1),
+.tracking_cells > div:nth-child(1){
+    width:100px;
+}
+.tracking_header > div:nth-child(2),
+.tracking_cells > div:nth-child(2){
+    width: 115px;
+}
+.tracking_header > div:nth-child(3),
+.tracking_cells > div:nth-child(3){
+    width: 128px;
+}
+.tracking_header > div:nth-child(4),
+.tracking_cells > div:nth-child(4){
+    width:100px;
+}
+.tracking_header > div:nth-child(5),
+.tracking_cells > div:nth-child(5){
+    width: 100px;
+}
+.tracking_header > div:nth-child(6),
+.tracking_cells > div:nth-child(6){
+    width:100px;
+}
+.tracking_header > div:nth-child(7),
+.tracking_cells > div:nth-child(7){
+    width:100px;
+}
+*/
+
+.tracking-last-status {
+    background-color: #FA7801;
+    border-radius: 5px;
+    padding: 4px 13px;
+    padding-bottom: 2px;
+    display:
+    inline-block;
+    color:#fff;
+    font-weight: normal;
+    font-size: 13px;
+}
+
+
+.woocommerce-MyAccount-content {
+    flex: 1 0 70%;
+    max-width: 100%;
+    width: 100%;
+}
+
+/* .tracking-powered {
+    color:#000;
+    direction: ltr;
+    font-size: 14px;
+    text-align: center;
+    margin-top: 50px;
+}
+.tracking-powered .image {
+    height: 31px;
+    background: url(../images/illo.svg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width: 100px;
+    display: inline-block;
+    position: relative;
+    top: 10px;
+} */
+.tracking_cells.big >  div:first-child{
+    width: calc(100% - -2px);
+    position: absolute;
+    /* border: 0; */
+    right: -1px;
+    top: -23px;
+    /* background: white; */
+    /* border-top: 0; */
+    /* border-top-right-radius: 0; */
+    /* border-top-left-radius: 0; */
+    text-align: right;
+    padding-right: 15px;
+    padding-left: 15px;
+    height: calc(100% + 24px);
+    z-index: 1;
+    border-left:1px solid #D9D9D9;
+    border-bottom-left-radius:10px;
+}
+
+.tracking-history-title {
+    margin-bottom:10px;
+    display: block;
+}
+.tracking-history-step {padding-top: 10px;}
+
+.tracking-history-box {}
+/* .tracking-history-step .tracking-history-box:after {
+    content:
+    "";
+    position:
+    absolute;
+    right: 30px;
+    background: #FA7801;
+    height: calc(100% - 85px);
+    bottom:0;
+    width: 1px;
+} */
+.tracking-history-status {
+    color: #2A2A2A;
+    display: block;
+}
+.tracking-history-date {
+    display: block;
+    font-weight: normal;
+}
+
+.tracking-history-step .tracking-history-icon {
+        background-image: url(../images/icon1.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 32px;
+        height: 32px;
+        background-color: #FA7801;
+        display: inline-block;
+        border-radius: 50%;
+        float: right;
+        position: relative;
+        top: -5px;
+        margin-left: 10px;
+}
+
+.tracking_cells.big > div,
+.tracking_cells.big > div:first-child{
+
+    border-top:0;border-top-left-radius:0;border-top-right-radius:0;
+    background:white;
+}
+
+.tracking-search-title {
+    padding: 10px 15px;
+    background-color: #000;
+    color: #fff;
+    font-weight: bold;
+    text-align: right;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+.tracking-search-box {
+
+    border:1px solid #D9D9D9;padding: 20px;
+    border-bottom-left-radius:10px;
+    border-bottom-right-radius:10px;
+    position: relative;
+}
+.tracking-search-box > div{
+    display: inline-block;
+    margin-left: 10px;
+}
+.tracking-search-box input {
+    border:1px solid #000;
+    border-radius: 20px;
+    color: #000;
+    font-size: 16px;
+    font-weight: normal;
+    padding: 10px 20px;
+}
+
+.tracking-search-box label {
+
+font-size: 16px;
+
+padding-right: 5px;
+}
+.tracking-search-box button {
+    padding: 10px 15px;
+    background-color: #000;
+    color: #fff;
+    border-radius: 20px;
+    font-weight: normal;
+    font-size: 16px;
+}
+
+.tracking-search-box > div.tracking-search-box-result,
+.tracking-search-box > div.tracking-search-box-not-found {
+    display: none;
+}
+.tracking-search-box > div.tracking-search-box-not-found {
+    padding: 20px 5px;
+    text-align: center;
+    border: 1px solid #D9D9D9;
+    color: #000;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+
+
+.tracking-search-box-result-order-title {font-size: 16px;}
+
+.tracking-search-box > div.tracking-search-box-result {
+
+    border:1px solid #D9D9D9;padding: 20px;border-radius: 10px;
+
+    ;margin: 20px 0;color: #000;}
+
+.tracking-search-box-result-order-status {
+    background: #326e38;
+    padding: 1px 10px;
+    color:#fff;
+    border-radius: 5px;
+    margin-right: 20px;
+    font-size: 13px;
+    font-weight: normal;
+}
+
+.tracking-search-box-result-details-title {
+    background:#000;
+    color:#fff;
+    padding:10px 15px 7px;
+    margin-top: 20px;
+    border-top-left-radius:10px;
+    border-top-right-radius:10px;
+}
+
+.tracking-search-box-result-details-box{
+    overflow:hidden;
+    padding:20px;
+    border:1px solid #D9D9D9;
+    border-bottom-left-radius:10px;
+    border-bottom-right-radius:10px;
+}
+.tracking-search-box-result-details-box > div{
+    display:
+    block;
+    width: 50%;
+    float:
+    right;
+}
+.tracking-search-box-result-details-box > div > div
+{
+
+}
+.tracking-search-box-result-details-box > div > div > div{
+    display:block;
+    width:44%;
+    float:right;
+}
+
+.tracking-search-box-result-details-box > div > div > div:last-child{
+    font-weight:normal;
+}
+.tracking-history {
+    margin-top:20px;
+    margin-right: 22px;
+    position: relative;
+}
+
+/* Media queries - Responsive timeline on screens less than 600px wide */
+@media screen and (max-width: 600px) {
+    /* Place the timelime to the left */
+    .shippingo-timeline::after {
+        right: 31px;
+    }
+
+    /* Full-width containers */
+    .shippingo-container {
+        width: 100%;
+        padding-right: 70px;
+        padding-left: 25px;
+        right:0;
+        text-align:right;
+    }
+
+    /* Make sure that all arrows are pointing leftwards */
+    .container::before {
+        right: 60px;
+        border: medium solid #ffca00;
+        border-width: 10px 10px 10px 0;
+        border-color: transparent #ffca00 transparent transparent;
+    }
+
+    /* Make sure all circles are at the same spot */
+    .shippingo-left::after, .shippingo-right::after {
+        right: 22px;
+    }
+
+    /* Make all right containers behave like the left ones */
+    .shippingo-right {
+        right: 0%;
+    }
+
+    .shippingo-left::before , .shippingo-right::before{
+        right: 60px;
+    }
+    .shippingo-right::before {
+        border: medium solid #ffca00;
+        border-color: transparent #ffca00 transparent #ffca00;
+        border-width: 10px 0px 10px 10px;
+    }
+
+    .tracking-search-box input {
+        margin-bottom: 13px;
+        width: 100%;
+    }
+}
